@@ -52,7 +52,7 @@ const Tickets = ({ listOfDirections, maxNumOfWays, minNumOfWays }) => {
                 <button onClick={handleButton} className="get-tickets-button">
                     Generate tickets
                 </button>
-                <button onClick={handleArrange} className="arrange-button">Arrange</button>
+                {listOfTickets && <button onClick={handleArrange} className="arrange-button">Arrange</button>}
                 <div className="list-of-random-tickets">
                     {listToShow === 'random'  && shuffle(listOfTickets).map((item,index) => <div className="list-of-random-tickets-item" key={index}>{item[0]} <div className="arrow"><div></div></div> {item[1]} </div>)}
                     {listToShow === 'arrange' && listOfTickets.map((item,index) => <div className="list-of-random-tickets-item" key={index}>{item[0]} <div className="arrow"><div></div></div> {item[1]} </div>)}
