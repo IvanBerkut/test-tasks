@@ -1,0 +1,8 @@
+/* Avatar maker  */
+.webcam-block{
+  padding: 30px;
+  border: 2px solid #12cedb;
+  border-radius: 5%;
+  margin: auto;
+  max-width: 640px;
+}
