@@ -37,7 +37,7 @@ const generateDownload = (canvas, crop) => {
 
         const [isShown, setIsShown] = useState(false);
 
-        const handleCamera = () => setIsShown(!isShown);
+        const showCamera = () => setIsShown(true);
 
         const imgRef = useRef(null);
         const previewCanvasRef = useRef(null);
@@ -96,7 +96,7 @@ const generateDownload = (canvas, crop) => {
         return (
           <>
             <h1>Avatar maker</h1>
-            <button onClick={handleCamera}>Create avatar</button>
+            <button onClick={showCamera}>Create avatar</button>
             {isShown && <div className="webcam-block">
                 <Webcam
                 audio={false}

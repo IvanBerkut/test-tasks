@@ -34,6 +34,7 @@ function App() {
   return (
     <div className="App">
      <AvatarMaker />
+     <div className="separator"></div>
      <Tickets listOfDirections={listOfDirections} minNumOfWays="2" maxNumOfWays="9" />
     </div>
   );

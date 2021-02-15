@@ -1,8 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap');
+body{
+  font-family: 'Noto Sans TC', sans-serif;
+}
+.App{
+  text-align: center;
+}
+.separator{
+  width: 100%;
+  height: 2px;
+  margin: 50px 0;
+  background-color: #337AB7;
+}
+button{
+  cursor: pointer;
+  padding: 15px 25px;
+  margin: 15px;
+  border: none;
+  border-radius: 20px;
+  background-color: #337AB7;
+  color: white;
+  user-select: none;
+  outline: none;
+}
+button:active{
+  padding: 14px 24px;
+  border: 1px solid #ffffff;
+}
+button:disabled,
+button[disabled]{
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
 /* Avatar maker  */
 .webcam-block{
   padding: 30px;
-  border: 2px solid #12cedb;
-  border-radius: 5%;
   margin: auto;
-  max-width: 640px;
+  width: 80%;
+  max-width: 800px;
+}
+.webcam-block video{
+  width: 100%;
+}
+
+
+/* Random tickets */
+
+.list-of-random-tickets-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.arrow {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin: 20px;
+}
+.arrow div {
+  position: relative;
+  top: 20px;
+  width: 50px;
+  height: 5px;
+  background-color: #337AB7;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+  left: 0;
+  display: block;
+}
+.arrow div::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 5px;
+  top: -6px;
+  right: -4px;
+  background-color: #337AB7;
+  transform: rotate(45deg);
+}
+.arrow div::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 5px;
+  top: 6px;
+  right: -4px;
+  background-color: #337AB7;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+  transform: rotate(-45deg);
 }
