@@ -131,7 +131,7 @@ const generateDownload = (canvas, crop) => {
                 generateDownload(previewCanvasRef.current, completedCrop)
               }
             >
-              Download cropped image
+              Download Avatar
             </button> }
           </>
         );

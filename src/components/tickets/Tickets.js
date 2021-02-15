@@ -4,7 +4,7 @@ const Tickets = ({ listOfDirections, maxNumOfWays, minNumOfWays }) => {
 
     maxNumOfWays = maxNumOfWays > listOfDirections.length ? listOfDirections.length - 1 : maxNumOfWays
     const [listOfTickets, setListOfTickets] = useState(null)
-    const [whatShow, setWhotShow] = useState('')
+    const [listToShow, setListToShow] = useState('')
 
     const getRandomInt = max => Math.floor(Math.random() * Math.floor(max));
     
@@ -30,19 +30,17 @@ const Tickets = ({ listOfDirections, maxNumOfWays, minNumOfWays }) => {
             if (newRandomList[i][0] === newRandomList[i][1]){
                 newRandomList.splice(i, 1);
                 if (i < amountOfIterations) {
-                    newRandomList.push([newRandomList[i].to, listOfDirections[getRandomInt(listOfDirections.length)].citesCode])
+                    newRandomList.push([newRandomList[i][1], listOfDirections[getRandomInt(listOfDirections.length)].citesCode])
                 }
             }
         }
 
         setListOfTickets(newRandomList)
-        setWhotShow('random')
-        console.log(newRandomList)
+        setListToShow('random')
     }
 
     const handleArrange = () => {
-        setWhotShow('arrange')
-        console.log(newRandomList)
+        setListToShow('arrange')
     }
 
     return (
@@ -56,8 +54,8 @@ const Tickets = ({ listOfDirections, maxNumOfWays, minNumOfWays }) => {
                 </button>
                 <button onClick={handleArrange} className="arrange-button">Arrange</button>
                 <div className="list-of-random-tickets">
-                    {whatShow === 'random'  && shuffle(listOfTickets).map((item,index) => <div className="list-of-random-tickets-item" key={index}>{item[0]} <div className="arrow"><div></div></div> {item[1]} </div>)}
-                    {whatShow === 'arrange' && listOfTickets.map((item,index) => <div className="list-of-random-tickets-item" key={index}>{item[0]} <div className="arrow"><div></div></div> {item[1]} </div>)}
+                    {listToShow === 'random'  && shuffle(listOfTickets).map((item,index) => <div className="list-of-random-tickets-item" key={index}>{item[0]} <div className="arrow"><div></div></div> {item[1]} </div>)}
+                    {listToShow === 'arrange' && listOfTickets.map((item,index) => <div className="list-of-random-tickets-item" key={index}>{item[0]} <div className="arrow"><div></div></div> {item[1]} </div>)}
                 </div>
             </div>
         </>
